@@ -10,4 +10,5 @@ This work is inspired from the javascript framework [Distill Template](https://g
 
 * Port screen rules (different width --> different font sizes)
 * Adjust code environment
+* Add footer
 * ...
