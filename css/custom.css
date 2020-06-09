@@ -1,0 +1,97 @@
+
+/* KATEX */
+
+body { counter-reset: eqnum; }
+
+.katex { font-size: 1em !important;
+  -webkit-font-smoothing: antialiased;
+  color: rgba(0, 0, 0, 0.8);
+  }
+
+.katex-display .katex {
+    display: inline-block; } /* overwrite katex settings */
+
+.katex-display::after {
+    counter-increment: eqnum;
+    content: "(" counter(eqnum) ")";
+    position: relative;
+    float: right;
+    padding-right: 5px; }
+
+/* CODE */
+
+code {
+    padding: 0.1em 0.2em;
+    border-radius: 2px;
+    font-size: 90%;
+}
+
+.hljs {
+    font-size: 90%;
+    line-height: 1.35em;
+    border-radius: 10px; }
+
+.hljs-meta, .hljs-metas, .hljs-metap { font-weight: bold; }
+
+.hljs-meta { color: rgb(25, 179, 51); }
+
+.hljs-metas { color: red; }
+
+.hljs-metap { color: rgb(51, 131, 231); }
+
+
+/* DISTILL */
+
+html {
+  font-size: 14px;
+	line-height: 1.6em;
+  /* font-family: "Libre Franklin", "Helvetica Neue", sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  /*, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media(min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+a {
+  color: #004276;
+}
+
+article {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ADJUSTMENTS */
+
+.franklin-content ul li p { margin: 0; }
+
+body {
+  padding-top: 5rem;
+}
+
+.bg-dark {
+	background-color: hsl(200, 60%, 15%) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: rgba(255,255,255,.8);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+	color: rgba(255,255,255,1);
+}
+
+.nav-link {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+}

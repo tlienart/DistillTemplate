@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <link rel="stylesheet" href="/DistillTemplate/libs/katex/katex.min.css">
+     
+   <link rel="stylesheet" href="/DistillTemplate/libs/highlight/github.min.css">
+   
+
+  <title>Franklin Sandbox</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/DistillTemplate/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/DistillTemplate/css/custom.css" rel="stylesheet">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" id="mainNav">
+  <div class="container">
+    <span class="navbar-brand">
+      BLAH
+    </span>
+    <div id="navbarMenu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hello</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Goodbye</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <main role="main" class="container">
+    <article>
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="franklin_syntax_sandbox"><a href="#franklin_syntax_sandbox">Franklin syntax sandbox</a></h1>
+<p>This page is meant as a sandbox for Franklin Syntax so that you can quickly practice or experience things.</p>
+<h2 id="sandbox"><a href="#sandbox">Sandbox</a></h2>
+<p>Write whatever you want here to practice Franklin Syntax:</p>
+<pre><code class="language-julia">using LinearAlgebra, Random
+Random.seed!(135)
+a, b = randn(50), randn(50)
+println(dot(a, b))
+println(sum(ai * bi for (ai, bi) ∈ zip(a, b)))</code></pre>
+<pre><code class="plaintext">7.7763287359738635
+7.776328735973864
+</code></pre>
+<p>&#40;yet another example that floating point arithmetics can be complicated&#41;.</p>
+\[ \forall x \in \R:\quad \scal{x, x} \ge 0 \]
+<p>Surely some people remember the ordering, but I always forget:</p>
+\[ \varphi(\mathbb E[X]) \le \mathbb E[\varphi(X)] \]
+<p>for \(\varphi\) convex.<div class="page-foot">
+  <div class="copyright">
+    &copy; Jun & Thibaut. Last modified: June 09, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
+  </div>
+</div>
+</div><!-- CONTENT ENDS HERE -->
+      </article>
+    </main>
+    
+        <script src="/DistillTemplate/libs/katex/katex.min.js"></script>
+<script src="/DistillTemplate/libs/katex/auto-render.min.js"></script>
+<script>renderMathInElement(document.body)</script>
+
+    
+    
+        <script src="/DistillTemplate/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>
