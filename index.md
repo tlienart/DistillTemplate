@@ -2,10 +2,14 @@
 @def hasmath = true
 @def hascode = true
 
+@def front_matter = """{"title":"Distill for Franklin.jl","description":"Scientific and technical writing, native to the web","authors":[{"author":"Jun Tian","authorURL":"https://github.com/findmyway","affiliation":"","affiliationURL":""},{"author":"Thibaut Lienart","authorURL":"https://github.com/tlienart","affiliation":"","affiliationURL":""}],"publishedDate":"2020-06-10T12:36:15.000+08:00","citationText":"Jun, Thibaut, et al., 2020"}"""
 
 # Franklin syntax sandbox
 
 This page is meant as a sandbox for Franklin Syntax so that you can quickly practice or experience things.
+
+<!-- TODO: -->
+\aside{This content should appear in the gutter of the article.}
 
 ## Sandbox
 
