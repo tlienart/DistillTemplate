@@ -21,13 +21,12 @@ end
 
 function hfun_appendix()
     ap = locvar(:appendix)
-    s = ""
-    if !isnothing(ap)
-        s = F.md2html(ap)
-    end
+    ap = isnothing(ap) ? "" : F.md2html(ap)
+    bib = locvar(:bibliography)
+    bib = isnothing(bib) ? "" : "<d-bibliography src=\"$(F.parse_rpath(bib; canonical=false, code=true))\"></d-bibliography>"
     """
     <d-appendix>
-    $s
+        $ap
     </d-appendix>
     """
 end

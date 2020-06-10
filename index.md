@@ -4,6 +4,8 @@
 
 @def front_matter = """{"title":"Distill for Franklin.jl","description":"This page is meant as a sandbox for Franklin Syntax so that you can quickly practice or experience things.","authors":[{"author":"Jun Tian","authorURL":"https://github.com/findmyway","affiliation":"","affiliationURL":""},{"author":"Thibaut Lienart","authorURL":"https://github.com/tlienart","affiliation":"","affiliationURL":""}],"publishedDate":"2020-06-10T12:36:15.000+08:00","citationText":"Jun, Thibaut, et al., 2020"}"""
 
+@def bibliography = "/assets/bib/bibliography.bib"
+
 @def appendix = """
     ### abc xyz
     haha
@@ -49,3 +51,7 @@ for $\varphi$ convex.
 You can use footnote provided in Distill \footnote{This is the [footnote]() provided in distill} .
 
 ## Appendices
+
+## Cite
+
+Cite ~~~<d-cite bibtex-key="mercier2011humans"></d-cite>~~~
