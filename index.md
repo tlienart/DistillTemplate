@@ -3,7 +3,7 @@
 @def hasmath = true
 @def hascode = true
 
-@def front_matter = """{"authors":[{"author":"Jun Tian","authorURL":"https://github.com/findmyway","affiliation":"","affiliationURL":""},{"author":"Thibaut Lienart","authorURL":"https://github.com/tlienart","affiliation":"","affiliationURL":""}],"publishedDate":"2020-06-10T12:36:15.000+08:00","citationText":"Jun, Thibaut, et al., 2020"}"""
+@def front_matter = """{"authors":[{"author":"Jun Tian","authorURL":"https://github.com/findmyway","affiliation":"","affiliationURL":""},{"author":"Thibaut Lienart","authorURL":"https://github.com/tlienart","affiliation":"","affiliationURL":""}],"publishedDate":"2020-06-10T12:36:15.000+08:00","citationText":"Jun, Thibaut, et al., 2020","journal":{"title":"Distill"}}"""
 
 @def bibliography = "/assets/bib/bibliography.bib"
 
