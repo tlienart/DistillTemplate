@@ -63,8 +63,6 @@ function lx_footnote(lxc,lxd)
     # workaround
     if startswith(content, "<p>")
         content = content[4:end-5]
-    else
-        @warn F.html_err("content in footnote should be a paragraph")
     end
     "<d-footnote>$content</d-footnote>" |> html
 end
