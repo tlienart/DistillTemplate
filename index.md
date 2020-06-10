@@ -51,7 +51,7 @@ for $\varphi$ convex.
 You can use footnote provided in Distill \footnote{This is the [footnote]() provided in distill} .
 
 ## Appendices
+Cite \dcite{mercier2011humans,dong2014image}
 
 ## Cite
 
-Cite ~~~<d-cite bibtex-key="mercier2011humans"></d-cite>~~~

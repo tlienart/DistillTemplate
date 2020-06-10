@@ -27,8 +27,14 @@ function hfun_appendix()
     """
     <d-appendix>
         $ap
+        $bib
     </d-appendix>
     """
+end
+
+function lx_dcite(lxc,_)
+    content = F.content(lxc.braces[1])
+    "<d-cite key=\"$content\"></d-cite>" |> html
 end
 
 # https://github.com/distillpub/template/blob/b854bd0124911e1be4744e472b67832e3251b96c/src/styles/styles-layout.css#L137-L166
