@@ -3,7 +3,9 @@
 @def hasmath = true
 @def hascode = true
 
-@def front_matter = """{"authors":[{"author":"Jun Tian","authorURL":"https://github.com/findmyway","affiliation":"","affiliationURL":""},{"author":"Thibaut Lienart","authorURL":"https://github.com/tlienart","affiliation":"","affiliationURL":""}],"publishedDate":"2020-06-10T12:36:15.000+08:00","citationText":"Jun, Thibaut, et al., 2020","journal":{"title":"Distill"}}"""
+<!-- @def front_matter = """{"authors":[{"author":"Jun Tian","authorURL":"https://github.com/findmyway","affiliation":"","affiliationURL":""},{"author":"Thibaut Lienart","authorURL":"https://github.com/tlienart","affiliation":"","affiliationURL":""}],"publishedDate":"2020-06-10T12:36:15.000+08:00","citationText":"Jun, Thibaut, et al., 2020","journal":{"title":"Distill"}}""" -->
+
+@def is_enable_toc = true
 
 @def bibliography = "/assets/bib/bibliography.bib"
 
@@ -11,9 +13,6 @@
     ### abc xyz
     haha
     """
-
-<!-- TODO: -->
-<!-- \toc -->
 
 ## Sandbox
 
@@ -42,6 +41,8 @@ Surely some people remember the ordering, but I always forget:
 $$ \varphi(\E[X]) \le \E[\varphi(X)] $$
 
 for $\varphi$ convex.
+
+### Test h3
 
 ## Firgure
 

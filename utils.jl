@@ -3,7 +3,6 @@ const F = Franklin
 
 html(s) = "\n~~~$s~~~\n"
 
-# TODO: support YAML format
 function hfun_frontmatter()
     fm = locvar(:front_matter)
     if isnothing(fm)
@@ -15,6 +14,34 @@ function hfun_frontmatter()
                 $fm
             </script>
         </d-front-matter>
+        """
+    end
+end
+
+function hfun_byline()
+    fm = locvar(:front_matter)
+    if isnothing(fm)
+        ""
+    else
+        "<d-byline></d-byline>" 
+    end
+end
+
+function hfun_dtoc()
+    is_enable_toc = locvar(:is_enable_toc)
+    minlevel = locvar("mintoclevel")
+    maxlevel = locvar("maxtoclevel")
+    toc = F.hfun_toc([string(minlevel), string(maxlevel)])
+    if isnothing(is_enable_toc)
+        ""
+    else
+        """
+        <hr class="franklin-toc-separator">
+        <d-article class="franklin-content">
+        <h3 class="franklin-toc-header">Table of content</h3>
+        $toc
+        </d-article>
+        <hr class="franklin-toc-separator">
         """
     end
 end
