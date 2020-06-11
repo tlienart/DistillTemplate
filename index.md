@@ -1,22 +1,27 @@
 @def title = "Distill for Franklin.jl"
-@def description = "This page is meant as a sandbox for Franklin Syntax so that you can quickly practice or experience things."
+@def description = "This page is meant as a sandbox for [Franklin](https://franklinjl.org/) syntax so that you can quickly practice or experience things."
 @def hasmath = true
 @def hascode = true
 
-<!-- @def front_matter = """{"authors":[{"author":"Jun Tian","authorURL":"https://github.com/findmyway","affiliation":"","affiliationURL":""},{"author":"Thibaut Lienart","authorURL":"https://github.com/tlienart","affiliation":"","affiliationURL":""}],"publishedDate":"2020-06-10T12:36:15.000+08:00","citationText":"Jun, Thibaut, et al., 2020","journal":{"title":"Distill"}}""" -->
+@def front_matter = """{"authors":[{"author":"Jun Tian","authorURL":"https://github.com/findmyway","affiliation":"","affiliationURL":""},{"author":"Thibaut Lienart","authorURL":"https://github.com/tlienart","affiliation":"","affiliationURL":""}],"publishedDate":"2020-06-10T12:36:15.000+08:00","citationText":"Jun, Thibaut, et al., 2020","journal":{"title":"Distill"}}"""
 
-@def is_enable_toc = true
+<!-- @def is_enable_toc = false -->
 
-@def bibliography = "/assets/bib/bibliography.bib"
+## Header
 
-@def appendix = """
-    ### abc xyz
-    haha
-    """
+Several variables are used to control the header part.
+
+```
+@def title = "Distill for Franklin.jl"
+@def description = "
+    This page is meant as a sandbox for [Franklin](https://franklinjl.org/) syntax so that you can quickly practice or experience things."
+```
+
+Here `title` is used to define the title of this article and 
 
 ## Sandbox
 
-Write whatever you want here to practice Franklin Syntax:
+Write whatever you want here to practice [Franklin](https://franklinjl.org/) Syntax:
 
 \aside{This content should appddear in the gutter of the article.}
 
@@ -58,3 +63,9 @@ A fully reproducible workflow based on literate programming \dcite{mercier2011hu
 
 ## Cite
 
+@def bibliography = "/assets/bib/bibliography.bib"
+
+@def appendix = """
+    ### abc xyz
+    haha
+    """

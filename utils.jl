@@ -3,6 +3,11 @@ const F = Franklin
 
 html(s) = "\n~~~$s~~~\n"
 
+function hfun_adddescription()
+    d = locvar(:description)
+    F.md2html(d)
+end
+
 function hfun_frontmatter()
     fm = locvar(:front_matter)
     if isnothing(fm)
