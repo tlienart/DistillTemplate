@@ -296,4 +296,28 @@ body {
     }
 
 
+/* note */
 
+.note {
+  margin-top: 1.5em;
+  width: 95%;
+  margin-left: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 1em;
+}
+.note .content {
+  color: white;
+  margin-left: 5px;
+  padding: 10px;
+  padding-left: 12px;
+}
+.note .title{
+  font-size: 105%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-left: 7px;
+  padding-top: 2px;
+  color: white;
+  background: cornflowerblue;
+}

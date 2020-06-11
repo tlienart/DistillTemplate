@@ -37,7 +37,7 @@ function hfun_dtoc()
     minlevel = locvar("mintoclevel")
     maxlevel = locvar("maxtoclevel")
     toc = F.hfun_toc([string(minlevel), string(maxlevel)])
-    if isnothing(is_enable_toc)
+    if isnothing(is_enable_toc) || !is_enable_toc
         ""
     else
         """

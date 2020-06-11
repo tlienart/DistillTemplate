@@ -1,13 +1,14 @@
 <!-- CONTENT ENDS HERE -->
           <!-- <d-bibliography src="bibliography.bib"></d-bibliography> -->
+
     {{ if hasmath }}
         {{ insert foot_katex.html }}
     {{ end }}
     {{ if hascode }}
         {{ insert foot_highlight.html }}
     {{ end }}
-    {{ appendix }}
 
+    {{ appendix }}
     <div class="distill-site-nav distill-site-footer">
     <p>© Copyright 2020 Jun & Thibaut. <a href="https://github.com/distillpub/template/blob/master/AUTHORS">Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.</p>
     </div>
