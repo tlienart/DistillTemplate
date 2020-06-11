@@ -25,6 +25,20 @@ Write whatever you want here to practice [Franklin](https://franklinjl.org/) Syn
 
 \aside{This content should appddear in the gutter of the article.}
 
+```julia:pyplot1
+using PyPlot # hide
+figure(figsize=(8, 6)) # hide
+x = range(-2, 2, length=500) # hide
+for α in 1:5 # hide
+    plot(x, sinc.(α .* x)) # hide
+end # hide
+savefig(joinpath(@OUTPUT, "sinc.svg")) # hide
+```
+
+\fig{sinc}
+
+\dfig{gutter;sinc;hihihi}
+
 ```julia:./ex1
 using LinearAlgebra, Random
 Random.seed!(135)
