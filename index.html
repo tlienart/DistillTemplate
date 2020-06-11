@@ -3,24 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="/DistillTemplate/assets/logoF_square.gif">
 
    <link rel="stylesheet" href="/DistillTemplate/libs/katex/katex.min.css">
      
    <link rel="stylesheet" href="/DistillTemplate/libs/highlight/github.min.css">
    
 
-  <title>Franklin Sandbox</title>
+  <title>Distill for Franklin.jl</title>
 
   <!-- Bootstrap core CSS -->
   <link href="/DistillTemplate/css/bootstrap.min.css" rel="stylesheet">
   <link href="/DistillTemplate/css/custom.css" rel="stylesheet">
+
+  <!-- distill -->
+  <script src="/DistillTemplate/libs/distill/template.v2.8.0.js"></script>
+  <d-front-matter>
+    <script id="distill-front-matter" type="text/json">
+        {
+    "authors": [
+        {
+            "author":"Jun Tian",
+            "authorURL":"https://github.com/findmyway",
+            "affiliation":"",
+            "affiliationURL":""
+        },
+        {
+            "author": "Thibaut Lienart",
+            "authorURL":"https://github.com/tlienart",
+            "affiliation":"",
+            "affiliationURL":""
+        }
+    ],
+    "publishedDate":"2020-06-10T12:36:15.000+08:00",
+    "citationText":"Jun, Thibaut, et al., 2020"
+}
+    </script>
+</d-front-matter>
 
 </head>
 <body>
   <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" id="mainNav">
   <div class="container">
     <span class="navbar-brand">
-      BLAH
+      <a href="#" class="navbar-brand">Distill for Franklin.jl</a>
     </span>
     <div id="navbarMenu">
       <ul class="navbar-nav ml-auto">
@@ -35,43 +61,182 @@
   </div>
 </nav>
 
-  <main role="main" class="container">
-    <article>
+    <d-title><h1>Distill for Franklin.jl</h1><p>This page is meant as a sandbox for <a href="https://franklinjl.org/">Franklin</a> syntax so that you can quickly practice or experience things. Link can be inserted with <code>&#91;Franklin&#93;&#40;https://franklinjl.org/&#41;</code>. Inline equation \(5^2 = 3^2 + 4 ^ 2\) with <code>&#36;5^2 &#61; 3^2 &#43; 4 ^ 2&#36;</code> is supported. And you can also cite <d-cite key="knuth1984"></d-cite> here. And even insert an image: <img src="https://julialang.org/assets/infra/logo.svg" alt="" /></p>
+</d-title>
+    <d-byline></d-byline>
+    
 <!-- Content appended here -->
-<div class="franklin-content"><h1 id="franklin_syntax_sandbox"><a href="#franklin_syntax_sandbox">Franklin syntax sandbox</a></h1>
-<p>This page is meant as a sandbox for Franklin Syntax so that you can quickly practice or experience things.</p>
+<d-article class="franklin-content"><h2 id="header"><a href="#header">Header</a></h2>
+<p>Several variables are used to control the header part.</p>
+<pre><code class="language-julia">@def title = "Distill for Franklin.jl"
+@def description = raw"""
+    This page is meant as a sandbox for [Franklin](https://franklinjl.org/) syntax
+    so that you can quickly practice or experience things.
+    Link can be inserted with `[Franklin](https://franklinjl.org/)`.
+    Inline equation $ 5^2 = 3^2 + 4 ^ 2 $ with `\\( 5^2 = 3^2 + 4 ^ 2 \\)` is supported.
+    """</code></pre>
+<p>Here <code>title</code> is used to define the title of this article. It is also shown in the browser&#39;s title bar or in the page&#39;s tab. And <code>description</code> will appear just under the title.</p>
+<pre><code class="language-julia">@def front_matter = """
+    {
+        "authors": [
+            {
+                "author":"Jun Tian",
+                "authorURL":"https://github.com/findmyway",
+                "affiliation":"",
+                "affiliationURL":""
+            },
+            {
+                "author": "Thibaut Lienart",
+                "authorURL":"https://github.com/tlienart",
+                "affiliation":"",
+                "affiliationURL":""
+            }
+        ],
+        "publishedDate":"2020-06-10T12:36:15.000+08:00",
+        "citationText":"Jun, Thibaut, et al., 2020"
+    }"""</code></pre>
+<p>The <code>front_matter</code> variable is used to define authors and some meta info. If it is not defined, the whole byline block will be removed.</p>
+<p>To generate the table of content&#40;TOC&#41;, you need to set <code>@def is_enable_toc &#61; true</code> instead of <code>\toc</code>.</p>
 <h2 id="sandbox"><a href="#sandbox">Sandbox</a></h2>
-<p>Write whatever you want here to practice Franklin Syntax:</p>
-<pre><code class="julia hljs"><span class="hljs-keyword">using</span> LinearAlgebra, Random
-Random.seed!(<span class="hljs-number">135</span>)
-a, b = randn(<span class="hljs-number">50</span>), randn(<span class="hljs-number">50</span>)
+<p>Write whatever you want here to practice <a href="https://franklinjl.org/">Franklin</a> syntax.</p>
+<h3 id="code"><a href="#code">Code</a></h3>
+<p>You may refer <a href="https://franklinjl.org/code/">Inserting and evaluating code</a> for more details.</p>
+<pre><code class="language-julia">using LinearAlgebra, Random
+Random.seed!(135)
+a, b = randn(50), randn(50)
 println(dot(a, b))
-println(sum(ai * bi <span class="hljs-keyword">for</span> (ai, bi) ∈ zip(a, b)))</code></pre>
-<pre><code class="plaintext hljs">7.7763287359738635
+println(sum(ai * bi for (ai, bi) ∈ zip(a, b)))</code></pre>
+<pre><code class="plaintext">7.7763287359738635
 7.776328735973864
 </code></pre>
-<p>&#40;yet another example that floating point arithmetics can be complicated&#41;.</p>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>x</mi><mo>∈</mo><mi mathvariant="double-struck">R</mi><mo>:</mo><mspace width="1em"/><mo stretchy="false">⟨</mo><mi>x</mi><mo separator="true">,</mo><mi>x</mi><mo stretchy="false">⟩</mo><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex"> \forall x \in \mathbb R:\quad \langle  x, x \rangle \ge 0 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord">∀</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord mathbb">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:1em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mclose">⟩</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span>
+<h3 id="equations"><a href="#equations">Equations</a></h3>
+<p>Equations also work here:</p>
+\[ \tag{1} \forall x \in \mathbb R:\quad \langle  x, x \rangle \ge 0 \]
+<p>And you can define a latex-like command:</p>
+<pre><code class="language-julia">\newcommand{\E}{\mathbb E}</code></pre>
 <p>Surely some people remember the ordering, but I always forget:</p>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi><mo stretchy="false">(</mo><mi mathvariant="double-struck">E</mi><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo>≤</mo><mi mathvariant="double-struck">E</mi><mo stretchy="false">[</mo><mi>φ</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex"> \varphi(\mathbb E[X]) \le \mathbb E[\varphi(X)] </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">φ</span><span class="mopen">(</span><span class="mord mathbb">E</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbb">E</span><span class="mopen">[</span><span class="mord mathdefault">φ</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span><span class="mclose">]</span></span></span></span></span>
-<p>for <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">φ</span></span></span></span> convex.<div class="page-foot">
-  <div class="copyright">
-    &copy; Jun & Thibaut. Last modified: June 09, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
-  </div>
-</div>
-</div><!-- CONTENT ENDS HERE -->
-      </article>
-    </main>
+\[ \tag{2} \varphi(\mathbb E[X]) \le \mathbb E[\varphi(X)] \]
+<p>for \(\varphi\) convex.</p>
+<h2 id="figures"><a href="#figures">Figures</a></h2>
+<p>The markdown grammer will just work as expected:</p>
+<pre><code class="language-julia">![rndimg](/assets/rndimg.jpg)</code></pre>
+<p><img src="/DistillTemplate/assets/rndimg.jpg" alt="rndimg" /></p>
+<p>Or you can also use the <code>\fig&#123;img&#125;</code> &#40;or <code>\figalt&#123;alt&#125;&#123;img&#125;</code>&#41; command to show a figure:</p>
+<pre><code class="language-julia">\figalt{test}{/assets/rndimg.jpg}</code></pre>
+<img src="/DistillTemplate/assets/rndimg.jpg" alt="test">
+<p>Beyond that, distill template also provides another usefule command to generate more beutiful figures:</p>
+<pre><code class="language-julia">\dfig{layout;src;caption}</code></pre>
+<p>Here <code>layout</code> can have the following values:</p>
+<ul>
+<li><p><code>gutter</code></p>
+</li>
+<li><p><code>text</code>/<code>body</code></p>
+</li>
+<li><p><code>page</code></p>
+</li>
+<li><p><code>body-outset</code></p>
+</li>
+<li><p><code>page-outset</code></p>
+</li>
+<li><p><code>screen</code></p>
+</li>
+<li><p><code>screen-inset</code></p>
+</li>
+</ul>
+<p>And the <code>caption</code> field can be general markdown.</p>
+<figure class="l-gutter">
+    <img src="/DistillTemplate/assets/backsplash-min-0.5.svg">
+    <figcaption>This image is from the <a href="https://julialang.org/">Julia website</a> shown in layout of <code>gutter</code>.</figcaption>
+</figure>
+
+<figure class="l-text">
+    <img src="/DistillTemplate/assets/backsplash-min-0.5.svg">
+    <figcaption>This image is from the <a href="https://julialang.org">Julia website</a> shown in layout of <code>text/body</code>.</figcaption>
+</figure>
+
+<figure class="l-body-outset">
+    <img src="/DistillTemplate/assets/backsplash-min-0.5.svg">
+    <figcaption>This image is from the <a href="https://julialang.org">Julia website</a> shown in layout of <code>body-outset</code>.</figcaption>
+</figure>
+
+<figure class="l-page">
+    <img src="/DistillTemplate/assets/backsplash-min-0.5.svg">
+    <figcaption>This image is from the <a href="https://julialang.org">Julia website</a> shown in layout of <code>page</code>.</figcaption>
+</figure>
+
+<figure class="l-page-outset">
+    <img src="/DistillTemplate/assets/backsplash-min-0.5.svg">
+    <figcaption>This image is from the <a href="https://julialang.org">Julia website</a> shown in layout of <code>page-outset</code>.</figcaption>
+</figure>
+
+<figure class="l-screen-inset">
+    <img src="/DistillTemplate/assets/backsplash-min-0.5.svg">
+    <figcaption>This image is from the <a href="https://julialang.org">Julia website</a> shown in layout of <code>screen-inset</code>.</figcaption>
+</figure>
+
+<figure class="l-screen">
+    <img src="/DistillTemplate/assets/backsplash-min-0.5.svg">
+    <figcaption>This image is from the <a href="https://julialang.org">Julia website</a> shown in layout of <code>screen</code>.</figcaption>
+</figure>
+
+<p>And of course, we can insert images generated from code:</p>
+<pre><code class="language-julia">using PyPlot
+figure(figsize=(8, 6))
+x = range(-2, 2, length=500)
+for α in 1:5
+    plot(x, sinc.(α .* x))
+end</code></pre>
+<pre><code class="language-julia">\dfig{body;sinc;As you can see, `\dfig` just works like `\fig`}</code></pre>
+<figure class="l-body">
+    <img src="/DistillTemplate/assets/index/code/output/sinc.svg">
+    <figcaption>As you can see, <code>\dfig</code> just works like <code>\fig</code></figcaption>
+</figure>
+
+<h2 id="footnotes_and_asides"><a href="#footnotes_and_asides">Footnotes and asides</a></h2>
+<p>Footnote is provided by the <code>\footnote&#123;&#125;</code> command <d-footnote>This is the <a href="">footnote</a> provided in distill</d-footnote>. Try to hover on the link and preview the foot notes. You can find the footnote in the appendix section of this page.</p>
+<aside>This content should appddear in the gutter of the article. You can insert arbitary markdown here&#33;</aside>
+<h2 id="cite"><a href="#cite">Cite</a></h2>
+<p>You can define the path to a bibliography file with:</p>
+<pre><code class="language-julia">@def bibliography = "/assets/bib/bibliography.bib"</code></pre>
+<p>And then cite the content with the <code>\dcite&#123;distill&#125;</code> command by leveraging the cite comonent provided by Distill <d-cite key="distill"></d-cite>.</p>
+<h2 id="appendices"><a href="#appendices">Appendices</a></h2>
+<p>In the appendix part of this page, the distill template will automatically generated <strong>Footnote</strong> and <strong>References</strong> section for you &#40;if you have defined footnotes and references&#41;. Beyond that, you can also insert some customized sections with the <code>appendix</code> variable:</p>
+<pre><code class="language-julia">@def appendix = """
+    ### Your Title
+    Your contennt will appear here.
+    ### Corrections & Contributions
+    Just [create an issue](https://github.com/tlienart/DistillTemplate/issues) on the source repository and we can disucss details there.
+    ### Citation
+    You can cite this work like this:
+    > Jun, Thibaut, et al., 2020. Distill for Franklin.jl. Retrieved from https://github.com/tlienart/DistillTemplate
+    """</code></pre>
+<p>The only requirement is that the title has to be <code>&lt;h3&gt;</code>.<!-- this is necessary!!! not sure why... -->
+<div></div></d-article><!-- CONTENT ENDS HERE -->
+          <!-- <d-bibliography src="bibliography.bib"></d-bibliography> -->
+
     
-        
-
-
-
-    
-    
-        
-
+        <script src="/DistillTemplate/libs/katex/katex.min.js"></script>
+<script src="/DistillTemplate/libs/katex/auto-render.min.js"></script>
+<script>renderMathInElement(document.body)</script>
 
     
+    
+        <script src="/DistillTemplate/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
+    
+
+    <d-appendix>
+    <h3>Your Title</h3>
+<p>Your contennt will appear here.</p>
+<h3>Corrections &amp; Contributions</h3>
+<p>Just <a href="https://github.com/tlienart/DistillTemplate/issues">create an issue</a> on the source repository and we can disucss details there.</p>
+
+    <d-bibliography src="/DistillTemplate/assets/bib/bibliography.bib"></d-bibliography>
+</d-appendix>
+
+    <div class="distill-site-nav distill-site-footer">
+    <p>© Copyright 2020 Jun & Thibaut. <a href="https://github.com/distillpub/template/blob/master/AUTHORS">Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.</p>
+    </div>
   </body>
 </html>
