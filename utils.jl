@@ -5,7 +5,8 @@ html(s) = "\n~~~$s~~~\n"
 
 function hfun_adddescription()
     d = locvar(:description)
-    F.md2html(d)
+    res = F.fd2html(d, internal=true)
+    res
 end
 
 function hfun_frontmatter()

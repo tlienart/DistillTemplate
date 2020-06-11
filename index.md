@@ -1,13 +1,13 @@
 @def title = "Distill for Franklin.jl"
 
-<!-- TODO: how to support using $ as inline equation -->
-<!-- TODO: how to use lx_function here?-->
-<!-- TODO: how to use insert general html here -->
 @def description = raw"""
     This page is meant as a sandbox for [Franklin](https://franklinjl.org/) syntax
     so that you can quickly practice or experience things.
     Link can be inserted with `[Franklin](https://franklinjl.org/)`.
-    Inline equation \\( 5^2 = 3^2 + 4 ^ 2 \\) with `\\( 5^2 = 3^2 + 4 ^ 2 \\)` is supported.
+    Inline equation $5^2 = 3^2 + 4 ^ 2$ with `$5^2 = 3^2 + 4 ^ 2$` is supported.
+    And you can also cite \dcite{knuth1984} here.
+    And even insert an image:
+    ![](https://julialang.org/assets/infra/logo.svg)
     """
 
 @def hasmath = true
@@ -45,7 +45,7 @@ Several variables are used to control the header part.
     This page is meant as a sandbox for [Franklin](https://franklinjl.org/) syntax
     so that you can quickly practice or experience things.
     Link can be inserted with `[Franklin](https://franklinjl.org/)`.
-    Inline equation \\( 5^2 = 3^2 + 4 ^ 2 \\) with `\\( 5^2 = 3^2 + 4 ^ 2 \\)` is supported.
+    Inline equation $ 5^2 = 3^2 + 4 ^ 2 $ with `\\( 5^2 = 3^2 + 4 ^ 2 \\)` is supported.
     """
 ```
 
