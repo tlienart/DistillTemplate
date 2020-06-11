@@ -205,7 +205,25 @@ And then cite the content with the `\dcite{distill}` command by leveraging the c
 
 ## Appendices
 
+In the appendix part of this page, the distill template will automatically generated **Footnote** and **References** section for you (if you have defined footnotes and references). Beyond that, you can also insert some customized sections with the `appendix` variable:
+
+```
 @def appendix = """
-    ### abc xyz
-    haha
+    ### Your Title
+    Your contennt will appear here.
+    ### Corrections & Contributions
+    Just [create an issue](https://github.com/tlienart/DistillTemplate/issues) on the source repository and we can disucss details there.
+    ### Citation
+    You can cite this work like this:
+    > Jun, Thibaut, et al., 2020. Distill for Franklin.jl. Retrieved from https://github.com/tlienart/DistillTemplate
+    """
+```
+
+The only requirement is that the title has to be `<h3>`.
+
+@def appendix = """
+    ### Your Title
+    Your contennt will appear here.
+    ### Corrections & Contributions
+    Just [create an issue](https://github.com/tlienart/DistillTemplate/issues) on the source repository and we can disucss details there.
     """
