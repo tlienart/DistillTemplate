@@ -33,7 +33,7 @@
         "citationText":"Jun, Thibaut, et al., 2020"
     }"""
 
-<!-- @def is_enable_toc = false -->
+<!-- @def is_enable_toc = true -->
 
 ## Header
 
@@ -101,7 +101,7 @@ println(sum(ai * bi for (ai, bi) ∈ zip(a, b)))
 
 Equations also work here:
 
-$$ \forall x \in \R:\quad \scal{x, x} \ge 0 $$
+$$ \tag{1} \forall x \in \R:\quad \scal{x, x} \ge 0 $$
 
 And you can define a latex-like command:
 
@@ -113,7 +113,7 @@ And you can define a latex-like command:
 
 Surely some people remember the ordering, but I always forget:
 
-$$ \varphi(\E[X]) \le \E[\varphi(X)] $$
+$$ \tag{2} \varphi(\E[X]) \le \E[\varphi(X)] $$
 
 for $\varphi$ convex.
 
